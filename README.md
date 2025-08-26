@@ -106,10 +106,8 @@ Below is example
    ros2 run turtlesim_plus turtlesim_plus_node.py 
    ros2 run lab2 eater.py 
    ros2 run lab2 killer.py 
-   
-
-
-
+   ros2 run lab2 turtlesim_pose.py 
+   rviz2
    ```
 
 
