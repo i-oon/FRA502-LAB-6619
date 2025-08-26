@@ -1,0 +1,42 @@
+[35m[1mConsolidate compiler generated dependencies of target cpp_node_test[0m
+[100%] Built target cpp_node_test
+[100%] Built target ament_cmake_python_copy_lab2
+running egg_info
+writing lab2.egg-info/PKG-INFO
+writing dependency_links to lab2.egg-info/dependency_links.txt
+writing top-level names to lab2.egg-info/top_level.txt
+reading manifest file 'lab2.egg-info/SOURCES.txt'
+writing manifest file 'lab2.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_lab2_egg
+-- Install configuration: ""
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/pythonpath.sh
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/pythonpath.dsv
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info
+-- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/top_level.txt
+-- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2/__init__.py
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2/dummy_module.py
+Listing '/home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2'...
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/eater.py
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/killer.py
+-- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/turtlesim_pose.py
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/cpp_node_test
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/ament_index/resource_index/package_run_dependencies/lab2
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/ament_index/resource_index/parent_prefix_path/lab2
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/path.sh
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/path.dsv
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.bash
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.sh
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.zsh
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.dsv
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/package.dsv
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/ament_index/resource_index/packages/lab2
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/cmake/lab2Config.cmake
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/cmake/lab2Config-version.cmake
+-- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/package.xml

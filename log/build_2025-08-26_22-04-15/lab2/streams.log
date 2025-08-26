@@ -1,0 +1,45 @@
+[0.011s] Invoking command in '/home/ioon/FRA502-LAB-6619/build/lab2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --build /home/ioon/FRA502-LAB-6619/build/lab2 -- -j16 -l16
+[0.060s] [100%] Built target cpp_node_test
+[0.065s] [100%] Built target ament_cmake_python_copy_lab2
+[0.251s] running egg_info
+[0.251s] writing lab2.egg-info/PKG-INFO
+[0.251s] writing dependency_links to lab2.egg-info/dependency_links.txt
+[0.251s] writing top-level names to lab2.egg-info/top_level.txt
+[0.253s] reading manifest file 'lab2.egg-info/SOURCES.txt'
+[0.253s] writing manifest file 'lab2.egg-info/SOURCES.txt'
+[0.276s] [100%] Built target ament_cmake_python_build_lab2_egg
+[0.286s] Invoked command in '/home/ioon/FRA502-LAB-6619/build/lab2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --build /home/ioon/FRA502-LAB-6619/build/lab2 -- -j16 -l16
+[0.296s] Invoking command in '/home/ioon/FRA502-LAB-6619/build/lab2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --install /home/ioon/FRA502-LAB-6619/build/lab2
+[0.302s] -- Install configuration: ""
+[0.302s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/pythonpath.sh
+[0.302s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/pythonpath.dsv
+[0.302s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info
+[0.303s] -- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/PKG-INFO
+[0.303s] -- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/top_level.txt
+[0.303s] -- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.303s] -- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.303s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2
+[0.303s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2/__init__.py
+[0.303s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2/dummy_module.py
+[0.331s] Listing '/home/ioon/FRA502-LAB-6619/install/lab2/local/lib/python3.10/dist-packages/lab2'...
+[0.335s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/eater.py
+[0.335s] -- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/killer.py
+[0.335s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/turtlesim_pose.py
+[0.335s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/lib/lab2/cpp_node_test
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/ament_index/resource_index/package_run_dependencies/lab2
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/ament_index/resource_index/parent_prefix_path/lab2
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/ament_prefix_path.sh
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/ament_prefix_path.dsv
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/path.sh
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/environment/path.dsv
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.bash
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.sh
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.zsh
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/local_setup.dsv
+[0.336s] -- Installing: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/package.dsv
+[0.336s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/ament_index/resource_index/packages/lab2
+[0.337s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/cmake/lab2Config.cmake
+[0.337s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/cmake/lab2Config-version.cmake
+[0.337s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/lab2/share/lab2/package.xml
+[0.339s] Invoked command in '/home/ioon/FRA502-LAB-6619/build/lab2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --install /home/ioon/FRA502-LAB-6619/build/lab2
