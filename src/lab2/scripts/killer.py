@@ -15,10 +15,11 @@ class killer(Node):
         super().__init__('killer')
         
         self.count = 0
-        self.turtle1 = []
-        self.turtle2 = []
-        
-        
+        self.turtle1 = None
+        self.turtle2 = None
+        self.turtle2_spawned = False
+        self.flag_count = 0 
+
         self.create_subscription(Pose, '/turtle1/pose', self.turtle1_pose_callback, 10)
         self.create_subscription(Int64, '/turtle1/pizza_count', self.count_callback, 10)
         self.create_subscription(Pose, '/turtle2/pose', self.turtle2_pose_callback, 10)
@@ -26,15 +27,15 @@ class killer(Node):
         self.spawn_turtle2_client = self.create_client(Spawn, '/spawn_turtle')
         self.kill_client = self.create_client(Kill, '/remove_turtle')
         
-        self.spawn_turtle2()
-
-        
+        # self.spawn_turtle2()
         self.create_timer(0.01, self.timer_callback)
-        
-        self.flag_count = 0
+    
     
     def count_callback(self, msg):
         self.count = msg.data
+        if self.count >= 5 and not self.turtle2_spawned:
+            self.spawn_turtle2()
+            self.turtle2_spawned = True
         
     def kill_turtle1(self):
         kill_request = Kill.Request()
@@ -58,47 +59,33 @@ class killer(Node):
         self.cmdvel_pub.publish(msg)
 
     def turtle2_pose_callback(self, msg):
-        self.turtle2_pose = Pose()
-        self.turtle2_pose.x = msg.x
-        self.turtle2_pose.y = msg.y
-        self.turtle2_pose.theta = msg.theta
+        self.turtle2 = np.array([msg.x, msg.y, msg.theta])
     
     def turtle1_pose_callback(self, msg):
-        self.turtle1_pose = Pose()
-        self.turtle1_pose.x = msg.x
-        self.turtle1_pose.y = msg.y
-        self.turtle1_pose.theta = msg.theta
-        self.turtle1 = np.array([self.turtle1_pose.x, self.turtle1_pose.y, self.turtle1_pose.theta])
+        self.turtle1 = np.array([msg.x, msg.y, msg.theta])
        
-    def timer_callback(self):
-        
-        # if self.count > 4 and self.flag_count == 0:
-        #     self.flag_count = 1
-        # elif self.flag_count == 1:
-        #     self.spawn_turtle2()
-            
-        #     self.flag_count = 3
-        
-        if self.count > 4 :
-            if self.turtle1 is [] and self.turtle2 is []:
+    def timer_callback(self):    
+        if self.count >= 5 :
+            if self.turtle1 is None or self.turtle2 is None:
                 self.cmd_vel(0.0, 0.0)
                 return
             
-            dx = self.turtle1[0] - self.turtle2_pose.x
-            dy = self.turtle1[1] - self.turtle2_pose.y
+            dx = self.turtle1[0] - self.turtle2[0] 
+            dy = self.turtle1[1] - self.turtle2[1] 
     
             linear_distance = np.sqrt(dx**2 + dy**2)
             angle = np.arctan2(dy,dx)
-            error = angle - self.turtle2_pose.theta
+            error = angle - self.turtle2[2]
             angular_angle = np.arctan2(np.sin(error), np.cos(error))
             self.cmd_vel(5*linear_distance, 15*angular_angle)
-            
             
             if linear_distance < 0.1:
                 if self.flag_count == 0:
                     self.kill_turtle1()
                     self.flag_count = 1
                 self.cmd_vel(0.0, 0.0)
+        else:
+            self.cmd_vel(0.0, 0.0)
                 
 
 def main(args=None):

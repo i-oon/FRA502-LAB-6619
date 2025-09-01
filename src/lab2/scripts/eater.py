@@ -25,6 +25,7 @@ class eater(Node):
         self.create_timer(0.01, self.timer_callback)
         self.waypoint = []
         self.count = 0
+        self.turtle_pose = None
         self.pizza_count_callback(self.count)
         
     def goal_callback(self, msg):
@@ -56,8 +57,6 @@ class eater(Node):
     def cmd_vel(self, v, w):
         msg = Twist()
         msg.linear.x = v
-        msg.linear.y = 0.0
-        msg.linear.z = 0.0
         msg.angular.z = w
         self.cmdvel_pub.publish(msg)
         
@@ -68,43 +67,33 @@ class eater(Node):
             self.spawn_pizza(mouse[0], mouse[1])
         
     def turtle_pose_callback(self, msg):
-        self.turtle_pose = Pose()
-        self.turtle_pose.x = msg.x
-        self.turtle_pose.y = msg.y
-        self.turtle_pose.theta = msg.theta
-    
+        self.turtle_pose = np.array([msg.x,msg.y,msg.theta])
+
     
     def timer_callback(self):
         if not self.waypoint or self.turtle_pose is None:
             self.cmd_vel(0.0, 0.0)
             return
 
-        dx = self.waypoint[0][0] - self.turtle_pose.x
-        dy = self.waypoint[0][1] - self.turtle_pose.y
+        dx = self.waypoint[0][0] - self.turtle_pose[0]
+        dy = self.waypoint[0][1] - self.turtle_pose[1]
         linear_distance = np.sqrt(dx**2 + dy**2)
         angle = np.arctan2(dy,dx)
-        error = angle - self.turtle_pose.theta
+        error = angle - self.turtle_pose[2]
         angular_angle = np.arctan2(np.sin(error), np.cos(error))
 
-        self.cmd_vel(10*linear_distance, 15*angular_angle)
-        
-        # if angular_angle > 
+        self.cmd_vel(5*linear_distance, 15*angular_angle)   
         
         if linear_distance < 0.1 :
             self.cmd_vel(0.0, 0.0)
-            self.count += 1
-            self.eat_pizza()
-            self.pizza_count_callback(self.count)
+            if self.count < 5:
+                self.eat_pizza()
+                self.count += 1
+                self.pizza_count_callback(self.count)
             self.waypoint.pop(0)
                 
+                
             
-            
-            
-            
-            
-
-            
-    
 
 def main(args=None):
     rclpy.init(args=args)

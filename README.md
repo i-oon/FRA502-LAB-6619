@@ -103,11 +103,15 @@ Below is example
     ```
 2. **Run all nodes** (replace `StudentID` with your own ID):
    ```bash
+   cd FRA502-LAB-6619
+   colcon build
+   source install/setup.bash
+
    ros2 run turtlesim_plus turtlesim_plus_node.py 
    ros2 run lab2 eater.py 
    ros2 run lab2 killer.py 
    ros2 run lab2 turtlesim_pose.py 
-   rviz2
+   rviz2 -d src/lab2.rviz
    ```
 
 
