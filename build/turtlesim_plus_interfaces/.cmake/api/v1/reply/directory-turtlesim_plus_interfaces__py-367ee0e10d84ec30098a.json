@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "turtlesim_plus_interfaces__py",
+		"source" : "/home/ioon/FRA502-LAB-6619/build/turtlesim_plus_interfaces/turtlesim_plus_interfaces__py"
+	}
+}

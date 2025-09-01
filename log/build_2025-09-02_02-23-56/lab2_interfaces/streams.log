@@ -1,0 +1,53 @@
+[0.011s] Invoking command in '/home/ioon/FRA502-LAB-6619/build/lab2_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake /home/ioon/FRA502-LAB-6619/src/lab2_interfaces -DCMAKE_INSTALL_PREFIX=/home/ioon/FRA502-LAB-6619/install/lab2_interfaces
+[0.022s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.129s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.147s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.148s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.152s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.158s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.167s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.189s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.330s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.330s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.330s]   lab2_interfaces --arguments-file
+[0.330s]   /home/ioon/FRA502-LAB-6619/build/lab2_interfaces/rosidl_adapter__arguments__lab2_interfaces.json
+[0.330s]   --output-dir
+[0.330s]   /home/ioon/FRA502-LAB-6619/build/lab2_interfaces/rosidl_adapter/lab2_interfaces
+[0.330s]   --output-file
+[0.330s]   /home/ioon/FRA502-LAB-6619/build/lab2_interfaces/rosidl_adapter/lab2_interfaces.idls)
+[0.330s]   returned error code 1:
+[0.330s] 
+[0.330s]   Traceback (most recent call last):
+[0.331s] 
+[0.331s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.331s]       return _run_code(code, main_globals, None,
+[0.331s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.331s]       exec(code, run_globals)
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.331s]       sys.exit(main())
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.331s]       abs_idl_file = convert_to_idl(
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 24, in convert_to_idl
+[0.331s]       return convert_srv_to_idl(
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/srv/__init__.py", line 28, in convert_srv_to_idl
+[0.331s]       srv = parse_service_string(package_name, input_file.stem, content)
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 859, in parse_service_string
+[0.331s]       request_message = parse_message_string(
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 544, in parse_message_string
+[0.331s]       msg = MessageSpecification(pkg_name, msg_name, fields, constants)
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 388, in __init__
+[0.331s]       self.base_type = BaseType(
+[0.331s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 205, in __init__
+[0.331s]       raise InvalidResourceName(
+[0.331s] 
+[0.331s]   rosidl_adapter.parser.InvalidResourceName: 'server_Request' is an invalid
+[0.331s]   message name.  It should have the pattern '^[A-Z][A-Za-z0-9]*$'
+[0.332s] 
+[0.332s] Call Stack (most recent call first):
+[0.332s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.332s]   CMakeLists.txt:17 (rosidl_generate_interfaces)
+[0.332s] 
+[0.332s] [0m
+[0.332s] -- Configuring incomplete, errors occurred!
+[0.332s] See also "/home/ioon/FRA502-LAB-6619/build/lab2_interfaces/CMakeFiles/CMakeOutput.log".
+[0.335s] Invoked command in '/home/ioon/FRA502-LAB-6619/build/lab2_interfaces' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake /home/ioon/FRA502-LAB-6619/src/lab2_interfaces -DCMAKE_INSTALL_PREFIX=/home/ioon/FRA502-LAB-6619/install/lab2_interfaces

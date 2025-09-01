@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from lab2_interfaces/srv/Server.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+
+module lab2_interfaces {
+  module srv {
+    struct Server_Request {
+      geometry_msgs::msg::Point target;
+    };
+    struct Server_Response {
+      uint8 structure_needs_at_least_one_member;
+    };
+  };
+};

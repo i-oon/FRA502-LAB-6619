@@ -1,0 +1,6 @@
+[0.000000] (-) TimerEvent: {}
+[0.000328] (-) JobUnselected: {'identifier': 'lab1_interfaces'}
+[0.000534] (-) JobUnselected: {'identifier': 'lab2'}
+[0.000555] (-) JobUnselected: {'identifier': 'turtlesim_plus'}
+[0.000568] (-) JobUnselected: {'identifier': 'turtlesim_plus_interfaces'}
+[0.000824] (-) EventReactorShutdown: {}

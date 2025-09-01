@@ -1,0 +1,12 @@
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/uninstall.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/lab2_uninstall.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/ament_cmake_python_copy_lab2.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/ament_cmake_python_build_lab2_egg.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/cpp_node_test.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/test.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/edit_cache.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/rebuild_cache.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/list_install_components.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/install.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/install/local.dir
+/home/ioon/FRA502-LAB-6619/build/lab2/CMakeFiles/install/strip.dir

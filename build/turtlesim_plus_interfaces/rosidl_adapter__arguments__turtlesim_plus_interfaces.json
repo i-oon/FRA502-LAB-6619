@@ -1,0 +1,9 @@
+{
+  "package_name": "turtlesim_plus_interfaces",
+  "non_idl_tuples": [
+    "/home/ioon/FRA502-LAB-6619/src/turtlesim_plus/turtlesim_plus_interfaces:msg/ScannerData.msg",
+    "/home/ioon/FRA502-LAB-6619/src/turtlesim_plus/turtlesim_plus_interfaces:msg/ScannerDataArray.msg",
+    "/home/ioon/FRA502-LAB-6619/src/turtlesim_plus/turtlesim_plus_interfaces:srv/GivePosition.srv",
+    "/home/ioon/FRA502-LAB-6619/src/turtlesim_plus/turtlesim_plus_interfaces:action/GetData.action"
+  ]
+}

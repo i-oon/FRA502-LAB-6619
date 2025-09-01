@@ -1,0 +1,4 @@
+source;share/lab2_interfaces/local_setup.bash
+source;share/lab2_interfaces/local_setup.dsv
+source;share/lab2_interfaces/local_setup.sh
+source;share/lab2_interfaces/local_setup.zsh
