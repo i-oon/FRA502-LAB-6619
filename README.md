@@ -14,8 +14,7 @@ Global minimum: f(0,...,0) = 0
 ```
 ## Experimental Setup
 
-**Domain Design**
-Offset domain [0.5, 5.62]^d is used instead of the standard [-5.12, 5.12]^d, keeping the same range (5.12 units).
+**Domain Design**: Offset domain [0.5, 5.62]^d is used instead of the standard [-5.12, 5.12]^d, keeping the same range (5.12 units).
 This shifts the true global minimum x* = (0,0,…,0) outside but near the boundary (0.5 units away), creating a realistic constrained scenario where the optimum lies near a physical limit.
 
 Test Dimensions: 2D → 5D
