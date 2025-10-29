@@ -1,19 +1,28 @@
 # Branch and Bound vs Simulated Annealing for Rastrigin Function Optimization
 
-A comparative study of deterministic (Branch and Bound) and stochastic (Simulated Annealing) algorithms for solving the Rastrigin function optimization problem across multiple dimensions.
-
+A comparative study of deterministic (Branch and Bound) and stochastic (Simulated Annealing) algorithms for solving the Rastrigin Function Optimization problem across multiple dimensions (2D–5D).
+The project analyzes the trade-off between guarantee and scalability, highlighting how deterministic accuracy contrasts with stochastic flexibility.
 
 ## Overview
-- **Branch and Bound (BnB)**: A deterministic algorithm that guarantees finding the global minimum within a specified tolerance (ε)
-- **Simulated Annealing (SA)**: A stochastic algorithm inspired by metallurgical annealing, fast but without guarantee
+- **Branch and Bound (BnB)**: A deterministic algorithm that systematically explores the search space and guarantees finding the global minimum within a defined tolerance (ε).
+- **Simulated Annealing (SA)**: A stochastic algorithm inspired by metallurgical annealing, balancing exploration and exploitation via temperature decay. It runs efficiently with linear time complexity.
 
 The test function is the **Rastrigin function**, a challenging non-convex optimization benchmark with multiple local minima:
 ```
 f(x) = 10d + Σ(xi² - 10cos(2πxi))
 Global minimum: f(0,...,0) = 0
 ```
+## Experimental Setup
 
-## Features
+**Domain Design**
+Offset domain [0.5, 5.62]^d is used instead of the standard [-5.12, 5.12]^d, keeping the same range (5.12 units).
+This shifts the true global minimum x* = (0,0,…,0) outside but near the boundary (0.5 units away), creating a realistic constrained scenario where the optimum lies near a physical limit.
+
+Test Dimensions: 2D → 5D
+BnB ε values: 0.05–0.4
+SA Parameters: Linear cooling, adaptive step size, 1000 iterations
+
+## Implementation Features
 
 - **Branch and Bound Implementation**
   - Guaranteed global minimum within ε tolerance
@@ -73,7 +82,6 @@ Benchmark script for systematic performance comparison
 - [Matplotlib Documentation](https://matplotlib.org/stable/)
 - [SciPy Optimization](https://docs.scipy.org/doc/scipy/reference/optimize.html)
 
-
-### Member
+### Members
 - Disthorn Suttawet 66340500019
 - Boonyaporn Preechasuth 66340500031
