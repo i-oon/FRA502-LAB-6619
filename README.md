@@ -4,7 +4,7 @@
 A ROS2 control system for a 3-DOF robotic arm featuring inverse kinematics, teleoperation, autonomous random motion, and real-time Jacobian control.
 
 
-![System Architecture](66340500019_System_Architecture.png)
+![System Architecture](System_Architecture.png)
 
 
 ## 1. Overview
