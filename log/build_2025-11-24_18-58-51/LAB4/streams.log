@@ -1,0 +1,50 @@
+[0.022s] Invoking command in '/home/ioon/FRA502-LAB-6619/build/LAB4': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --build /home/ioon/FRA502-LAB-6619/build/LAB4 -- -j16 -l16
+[0.059s] [35m[1mConsolidate compiler generated dependencies of target cpp_node_test[0m
+[0.070s] [100%] Built target cpp_node_test
+[0.075s] [100%] Built target ament_cmake_python_copy_LAB4
+[0.305s] running egg_info
+[0.305s] writing LAB4.egg-info/PKG-INFO
+[0.306s] writing dependency_links to LAB4.egg-info/dependency_links.txt
+[0.306s] writing top-level names to LAB4.egg-info/top_level.txt
+[0.307s] reading manifest file 'LAB4.egg-info/SOURCES.txt'
+[0.307s] writing manifest file 'LAB4.egg-info/SOURCES.txt'
+[0.334s] [100%] Built target ament_cmake_python_build_LAB4_egg
+[0.355s] Invoked command in '/home/ioon/FRA502-LAB-6619/build/LAB4' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --build /home/ioon/FRA502-LAB-6619/build/LAB4 -- -j16 -l16
+[0.356s] Invoking command in '/home/ioon/FRA502-LAB-6619/build/LAB4': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --install /home/ioon/FRA502-LAB-6619/build/LAB4
+[0.364s] -- Install configuration: ""
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/environment/pythonpath.sh
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/environment/pythonpath.dsv
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4-0.0.0-py3.10.egg-info
+[0.364s] -- Installing: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4-0.0.0-py3.10.egg-info/PKG-INFO
+[0.364s] -- Installing: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4-0.0.0-py3.10.egg-info/top_level.txt
+[0.364s] -- Installing: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.364s] -- Installing: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4/__init__.py
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4/dummy_module.py
+[0.364s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4/workspace_analysis.py
+[0.398s] Listing '/home/ioon/FRA502-LAB-6619/install/LAB4/local/lib/python3.10/dist-packages/LAB4'...
+[0.401s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/lib/LAB4/dummy_script.py
+[0.401s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/lib/LAB4/end_effector_publisher.py
+[0.401s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/lib/LAB4/random_pose.py
+[0.402s] -- Installing: /home/ioon/FRA502-LAB-6619/install/LAB4/lib/LAB4/controller.py
+[0.402s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/lib/LAB4/teleop_jog_keyboard.py
+[0.402s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/lib/LAB4/cpp_node_test
+[0.402s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/launch
+[0.402s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/launch/simple_display.launch.py
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/ament_index/resource_index/package_run_dependencies/LAB4
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/ament_index/resource_index/parent_prefix_path/LAB4
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/environment/ament_prefix_path.sh
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/environment/ament_prefix_path.dsv
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/environment/path.sh
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/environment/path.dsv
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/local_setup.bash
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/local_setup.sh
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/local_setup.zsh
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/local_setup.dsv
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/package.dsv
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/ament_index/resource_index/packages/LAB4
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/cmake/LAB4Config.cmake
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/cmake/LAB4Config-version.cmake
+[0.403s] -- Up-to-date: /home/ioon/FRA502-LAB-6619/install/LAB4/share/LAB4/package.xml
+[0.417s] Invoked command in '/home/ioon/FRA502-LAB-6619/build/LAB4' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ioon/ros2_ws/install/launch_testing_examples:/home/ioon/ros2_ws/install/joystick:/home/ioon/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/ioon/ros2_ws/install/examples_rclpy_minimal_service:/home/ioon/ros2_ws/install/examples_rclpy_minimal_publisher:/home/ioon/ros2_ws/install/examples_rclpy_minimal_client:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_server:/home/ioon/ros2_ws/install/examples_rclpy_minimal_action_client:/home/ioon/ros2_ws/install/examples_rclpy_guard_conditions:/home/ioon/ros2_ws/install/examples_rclpy_executors:/opt/ros/humble /usr/bin/cmake --install /home/ioon/FRA502-LAB-6619/build/LAB4

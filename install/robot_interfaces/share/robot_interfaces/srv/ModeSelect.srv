@@ -1,0 +1,7 @@
+# Request
+std_msgs/String mode
+---
+# Response
+bool success
+float64[] solution
+string message

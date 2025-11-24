@@ -1,0 +1,12 @@
+srv/InverseKinematic.idl
+srv/InverseKinematic.srv
+srv/InverseKinematic_Request.msg
+srv/InverseKinematic_Response.msg
+srv/ModeSelect.idl
+srv/ModeSelect.srv
+srv/ModeSelect_Request.msg
+srv/ModeSelect_Response.msg
+srv/RandomEndEffector.idl
+srv/RandomEndEffector.srv
+srv/RandomEndEffector_Request.msg
+srv/RandomEndEffector_Response.msg

@@ -1,0 +1,8 @@
+{
+  "package_name": "robot_interfaces",
+  "non_idl_tuples": [
+    "/home/ioon/FRA502-LAB-6619/src/robot_interfaces:srv/RandomEndEffector.srv",
+    "/home/ioon/FRA502-LAB-6619/src/robot_interfaces:srv/ModeSelect.srv",
+    "/home/ioon/FRA502-LAB-6619/src/robot_interfaces:srv/InverseKinematic.srv"
+  ]
+}
