@@ -82,6 +82,11 @@ class controller(Node):
             self._update_to_motion()
         elif self.mode == "AM":
             self._update_am_motion()
+        else:
+            self._update_idle_motion()
+    
+    def _update_idle_motion(self):
+        self.publish_joint_state()
     
     def _update_ipk_motion(self):
         if not self.is_moving:
