@@ -1,8 +1,0 @@
-setup.py
-LAB4/__init__.py
-LAB4/dummy_module.py
-LAB4/workspace_analysis.py
-LAB4.egg-info/PKG-INFO
-LAB4.egg-info/SOURCES.txt
-LAB4.egg-info/dependency_links.txt
-LAB4.egg-info/top_level.txt
