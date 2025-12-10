@@ -173,9 +173,13 @@ Singularity
 * Threshold 0.01
 
 Workspace
-X ∈ [-0.5299, 0.5299]
-Y ∈ [-0.5292, 0.5301]
-Z ∈ [-0.2994, 0.7595]
+* X: [-0.530331, 0.530331] m
+* Y: [-0.530331, 0.530331] m
+* Z: [-0.299902, 0.759913] m
+
+*NOTE : Z bound should actually be [0, 0.759913] m for the robot to never move below the ground
+
+![Workspace](ws.png)
 
 ---
 

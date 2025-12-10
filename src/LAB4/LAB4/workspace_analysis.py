@@ -5,6 +5,10 @@ from spatialmath import SE3
 import roboticstoolbox as rtb
 from roboticstoolbox import RevoluteMDH
 import time
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from scipy.spatial import ConvexHull
+
 
 class RobotKinematics:
     def __init__(self):
@@ -13,9 +17,9 @@ class RobotKinematics:
         self.q_max = np.array([ np.pi,  np.pi,  np.pi])
         
         # Workspace bounds
-        self.x_min, self.x_max = -0.529921, 0.529921
-        self.y_min, self.y_max = -0.529200, 0.530097
-        self.z_min, self.z_max = 0, 0.759486
+        self.x_min, self.x_max = -0.530331, 0.530331
+        self.y_min, self.y_max = -0.530331, 0.530331
+        self.z_min, self.z_max = 0, 0.759913
         
         # URDF Joint Parameters (for accurate FK)
         self.j1_xyz = np.array([0, 0, 0.23])
@@ -27,7 +31,7 @@ class RobotKinematics:
         self.ee_xyz = np.array([0.28, 0, 0])
         self.ee_rpy = np.array([0, 0, 0])
         
-        # Robotics Toolbox model (matches URDF!)
+        # Robotics Toolbox model (matches URDF)
         self.robot = rtb.DHRobot([
             RevoluteMDH(d=0.23,  alpha=0,       a=0,    offset=0),
             RevoluteMDH(d=-0.12, alpha=-np.pi/2, a=0,   offset=-np.pi/2),
@@ -153,29 +157,23 @@ class RobotKinematics:
             if time.time() - start_time > max_time:
                 print(f"DEBUG: IK timeout after {max_time:.2f}s, best error {best_error:.4f}")
                 break
-
             try:
                 sol = self.robot.ikine_LM(
                     T_target,
                     q0=q0,
                     mask=[1, 1, 1, 0, 0, 0],
-                    ilimit=60  # <=== lower iteration limit
+                    ilimit=60 
                 )
-
                 if sol.success:
                     q = np.array(sol.q)
-
                     # joint limits
                     if not all(self.q_min[i] <= q[i] <= self.q_max[i] for i in range(3)):
                         continue
-
                     pos_check = self.get_position(q)
                     error = np.linalg.norm(pos_check - np.array(target_pos))
-
                     if error < best_error:
                         best_error = error
                         best_solution = q
-
                         if error < 0.02:  # 2 cm
                             return best_solution
 
@@ -196,33 +194,100 @@ class RobotKinematics:
         x, y, z = point
         return (self.x_min - tolerance <= x <= self.x_max + tolerance and
                 self.y_min - tolerance <= y <= self.y_max + tolerance and
-                self.z_min - tolerance <= z <= self.z_max + tolerance)
+                self.z_min <= z <= self.z_max + tolerance)
     
-    def calculate_workspace_bounds(self, n_samples_per_joint=50):
-        print(f'Calculating workspace with {n_samples_per_joint}^3 samples...')
-        q1_range = np.linspace(self.q_min[0], self.q_max[0], n_samples_per_joint)
-        q2_range = np.linspace(self.q_min[1], self.q_max[1], n_samples_per_joint)
-        q3_range = np.linspace(self.q_min[2], self.q_max[2], n_samples_per_joint)
+    def calculate_workspace_bounds(self, n_samples=120, base_joint_idx=0):
+        n_joints = len(self.q_min)
+        if n_joints < 2:
+            raise ValueError("Need at least 2 joints for rotational sweep")
+        other_joints = [i for i in range(n_joints) if i != base_joint_idx]
+        joint_samples = []
+        for joint_idx in other_joints:
+            samples = np.linspace(self.q_min[joint_idx], 
+                                self.q_max[joint_idx], 
+                                n_samples)
+            joint_samples.append(samples)
         
+        base_value = (self.q_min[base_joint_idx] + self.q_max[base_joint_idx]) / 2
         positions = []
-        for q1 in q1_range:
-            for q2 in q2_range:
-                for q3 in q3_range:
-                    pos = self.get_position(np.array([q1, q2, q3]))
-                    positions.append(pos)
+        import itertools
+        for q_tuple in itertools.product(*joint_samples):
+            q = np.zeros(n_joints)
+            q[base_joint_idx] = base_value
+            for i, joint_idx in enumerate(other_joints):
+                q[joint_idx] = q_tuple[i]
+            
+            pos = self.get_position(q)
+            positions.append(pos)
         
         positions = np.array(positions)
-        self.x_min, self.x_max = positions[:, 0].min(), positions[:, 0].max()
-        self.y_min, self.y_max = positions[:, 1].min(), positions[:, 1].max()
-        self.z_min, self.z_max = positions[:, 2].min(), positions[:, 2].max()
+        total_samples = len(positions)
+        print(f"Cross-section samples: {total_samples:,}")
         
-        print('='*60)
-        print('WORKSPACE BOUNDS:')
+        x0, y0, z0 = positions[:, 0], positions[:, 1], positions[:, 2]
+        rho = np.sqrt(x0**2 + y0**2)
+        rho_min, rho_max = rho.min(), rho.max()
+        z_min, z_max = z0.min(), z0.max()
+        x_min, x_max = -rho_max, rho_max
+        y_min, y_max = -rho_max, rho_max
+        
+        self.x_min, self.x_max = x_min, x_max
+        self.y_min, self.y_max = y_min, y_max
+        self.z_min, self.z_max = z_min, z_max
+        volume = (x_max - x_min) * (y_max - y_min) * (z_max - z_min)
+        
         print(f"  X: [{self.x_min:.6f}, {self.x_max:.6f}] m")
         print(f"  Y: [{self.y_min:.6f}, {self.y_max:.6f}] m")
         print(f"  Z: [{self.z_min:.6f}, {self.z_max:.6f}] m")
-        print('='*60)
-        return positions
+        print(f"  Radial reach: [{rho_min:.6f}, {rho_max:.6f}] m")
+        print(f"  Volume: {volume:.6f} m³")
+        print(f"  Efficiency: {n_joints-1}-DOF sampling ({total_samples:,} samples)")
+        print("="*60)
+        
+        return np.array([self.x_min, self.x_max,
+                        self.y_min, self.y_max,
+                        self.z_min, self.z_max])
+        
+    def plot_workspace(self, n_samples=120, show_cross_section=True):
+        q2_vals = np.linspace(self.q_min[1], self.q_max[1], n_samples)
+        q3_vals = np.linspace(self.q_min[2], self.q_max[2], n_samples)
+
+        Xs, Ys, Zs = [], [], []
+
+        for q2 in q2_vals:
+            for q3 in q3_vals:
+                pos = self.get_position(np.array([0.0, q2, q3]))
+                Xs.append(pos[0])
+                Ys.append(pos[1])
+                Zs.append(pos[2])
+
+        Xs, Ys, Zs = np.array(Xs), np.array(Ys), np.array(Zs)
+
+        rho = np.sqrt(Xs**2 + Ys**2)
+        rho_min, rho_max = rho.min(), rho.max()
+        q1_vals = np.linspace(-np.pi, np.pi, 120)
+        Xf, Yf, Zf = [], [], []
+
+        for q1 in q1_vals:
+            c, s = np.cos(q1), np.sin(q1)
+            Xf.append(c * Xs - s * Ys)
+            Yf.append(s * Xs + c * Ys)
+            Zf.append(Zs)
+
+        Xf = np.array(Xf).flatten()
+        Yf = np.array(Yf).flatten()
+        Zf = np.array(Zf).flatten()
+
+        fig = plt.figure(figsize=(9,7))
+        ax = fig.add_subplot(111, projection='3d')
+        ax.scatter(Xf, Yf, Zf, c=Zf, s=2, alpha=0.25)
+        ax.set_title("3R Robot Workspace (analytic rotational sweep)")
+        ax.set_xlabel("X (m)")
+        ax.set_ylabel("Y (m)")
+        ax.set_zlabel("Z (m)")
+        ax.set_box_aspect([1,1,1])
+        ax.grid(True)
+        plt.show()
 
 
 if __name__ == '__main__':
@@ -231,6 +296,8 @@ if __name__ == '__main__':
     print("="*60)
     
     robot = RobotKinematics()
+    robot.calculate_workspace_bounds()
+    robot.plot_workspace()
     
     # # Test FK
     # q_test = np.array([0.0, 0.0, 0.0])
@@ -255,11 +322,11 @@ if __name__ == '__main__':
 
     # print(f"Position: {pos}")
     # print(f"Expected: [0.000, -0.020, 0.760]")
-    for q in [
-        np.array([0.0, 0.0, 0.0]),
-        np.array([0.5, -0.7, 0.3]),
-        np.array([1.0, -1.0, 0.5]),
-    ]:
-        sigma_min = robot.singularity_measure(q)
-        pos = robot.get_position(q)
-        print(f"q = {q},  pos = {pos},  sigma_min = {sigma_min:.6e}")
+    # for q in [
+    #     np.array([0.0, 0.0, 0.0]),
+    #     np.array([0.5, -0.7, 0.3]),
+    #     np.array([1.0, -1.0, 0.5]),
+    # ]:
+    #     sigma_min = robot.singularity_measure(q)
+    #     pos = robot.get_position(q)
+    #     print(f"q = {q},  pos = {pos},  sigma_min = {sigma_min:.6e}")

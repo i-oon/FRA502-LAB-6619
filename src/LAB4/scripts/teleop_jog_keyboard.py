@@ -59,7 +59,7 @@ class TeleopJogKeyboard(Node):
         
         # State
         self.speed = 0.3
-        self.current_mode = "UNKNOWN"
+        self.current_mode = "IDLE"
         
         # Wait for services
         self.get_logger().info("Waiting for services...")

@@ -104,9 +104,9 @@ class controller(Node):
             self.current_q += error * step_size
         
         pos = self.kinematics.get_position(self.current_q)
-        if pos[2] < 0.02:  # Floor limit check
+        if pos[2] < 0.02:
             self.get_logger().warn("Floor limit reached. Cannot move below the floor.")
-            self.is_moving = False  # Stop motion
+            self.is_moving = False
         self.publish_joint_state()
     
     def _update_to_motion(self):
@@ -128,7 +128,6 @@ class controller(Node):
         self.publish_joint_state()
     
     def _update_am_motion(self):
-        
         if not self.is_moving and not self.am_waiting:
             if not self.random_pose_client.wait_for_service(timeout_sec=1.0):
                 self.get_logger().warn("AM: random_pose service not available")
@@ -158,7 +157,6 @@ class controller(Node):
                 if solution is None:
                     self.get_logger().warn("AM: IK failed for target")
                     return
-                
                 self.move_to_position(solution)
             return
         
@@ -169,6 +167,11 @@ class controller(Node):
             self.is_moving = False
         else:
             self.current_q += step_size * error
+        
+        pos = self.kinematics.get_position(self.current_q)
+        if pos[2] < 0.02:
+            self.get_logger().warn("Floor limit reached. Cannot move below the floor.")
+            self.is_moving = False  # Stop motion
         
         self.publish_joint_state()
 
@@ -251,7 +254,7 @@ class controller(Node):
         msg.pose.position.z = target_pos[2]
         msg.pose.orientation.w = 1.0
         
-        self.target_sub.callback(msg)
+        self.target_callback(msg)
         response.success = True
         response.message = f"Target sent: {target_pos}"
         return response
